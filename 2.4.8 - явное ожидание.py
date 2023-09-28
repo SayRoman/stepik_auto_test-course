@@ -5,12 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 
-
-browser = webdriver.Chrome()
-
 try:
 
-    #browser = webdriver.Chrome()
+    browser = webdriver.Chrome()
 
     browser.get("http://suninjuly.github.io/explicit_wait2.html")
 
@@ -30,12 +27,10 @@ try:
 
     y = calc(x)
 
-
     browser.find_element(By.ID, 'answer').send_keys(y)
     button = browser.find_element(By.ID, 'solve')
-    # browser.execute_script("return arguments[0].scrollIntoView(true);", button)
     button.click()
 
 finally:
-    time.sleep(30)
+    time.sleep(15)
     browser.quit()
